@@ -1,0 +1,20 @@
+<header class="navbar navbar-fixed-top navbar-dark ">
+  <div class="container" id="background">
+    <nav>
+    <ul id= "logo">
+    <li><%= link_to image_tag("rails.png", size: "200x70"), root_path %></li>
+    </ul>
+    <input type="text" name="search" placeholder="Tìm kiếm..">
+    <ul class="nav navbar-nav navbar-right" id= "a">
+          <li><%= link_to "Trang chủ", root_path %></li>
+          <li><%= link_to "Iphone", "#" %></li>
+          <li><%= link_to "Samsung", "#" %></li>
+          <li><%= link_to "Đăng nhập", "#" %></li>
+          <li><%= link_to "Đăng ký", "#" %></li>
+          <div id = "shopcart">
+          <%= link_to image_tag("shopcart.png", size: "50x50"), "#" %>
+           </div>
+    </ul>
+    </nav>
+  </div>
+</header>
