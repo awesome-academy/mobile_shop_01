@@ -1,0 +1,22 @@
+<header class="navbar navbar-fixed-top navbar-dark ">
+  <div class="container" id="background">
+    <nav>
+    <ul id= "logo">
+    <li><%= link_to image_tag("rails.png", class: "image_1"), root_path %></li>
+    </ul>
+    <input type="text" name= "search" placeholder=  <%= t "search" %> >
+    <ul class="nav navbar-nav navbar-right" id= "a">
+      <li><%= link_to t("home"), root_path %></li>
+      <li><%= link_to "Iphone", "#" %></li>
+      <li><%= link_to "Samsung", "#" %></li>
+      <li><%= link_to t("sign_up"), "#" %></li>
+      <li><%= link_to t("login"), "#" %></li>
+      <li><%= link_to "English", locale:"en" %></li>
+      <li><%= link_to "Vietnamese", locale:"vi" %></li>
+      <div id = "shopcart">
+      <%= link_to image_tag("shopcart.png", class: "image_2"), "#" %>
+      </div>
+    </ul>
+    </nav>
+  </div>
+</header>
