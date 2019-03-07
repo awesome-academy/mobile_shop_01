@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_084301) do
+ActiveRecord::Schema.define(version: 2019_03_03_143357) do
 
   create_table "bills", force: :cascade do |t|
     t.string "order_id"

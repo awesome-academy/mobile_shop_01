@@ -1,0 +1,31 @@
+
+<div class="col-md-6">
+  <%= link_to image_tag("avata.png", size: "1150x800") %>
+  </div>
+  <div class="col-md-5">
+    <h4><%= t("sign_up")%></h4>
+    <h5>
+    <%= form_for@user, url: signup_path do |f| %>
+      <%= render "shared/error_messages" %>
+
+      <%= f.label :name, t("name") %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :email, t("email") %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :phone, t("phone") %>
+      <%= f.phone_field :phone, class: "form-control" %>
+
+      <%= f.label :address, t("address") %>
+      <%= f.text_field :address, class: "form-control" %>
+
+      <%= f.label :password, t("password") %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :password_confirmation, t("confirmation") %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </h5>
+      <%= f.submit t("create_my_account"), class: "btn btn-primary" %>
+    <% end %>
+</div>
