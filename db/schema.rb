@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_021801) do
+ActiveRecord::Schema.define(version: 2019_03_03_143357) do
 
-  create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "bills", force: :cascade do |t|
     t.string "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.string "user_id"
     t.string "product_id"
     t.string "content"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_021801) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "images", force: :cascade do |t|
     t.string "product_id"
     t.string "url"
     t.string "name"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_021801) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "order_products", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "order_products", force: :cascade do |t|
     t.string "order_id"
     t.string "product_id"
     t.string "amount"
@@ -48,14 +48,14 @@ ActiveRecord::Schema.define(version: 2019_03_01_021801) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.string "user_id"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "catetory_id"
     t.string "name"
     t.string "price"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_021801) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "phone"
     t.string "email"
     t.string "name"
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 2019_03_01_021801) do
     t.string "money"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
